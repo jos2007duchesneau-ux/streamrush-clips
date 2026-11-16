@@ -7,7 +7,7 @@
 // where the StreamRush script exchanges it with TikTok and keeps the tokens in the macOS Keychain.
 var q = location.search;
 if (/[?&]code=/.test(q) || /[?&]error=/.test(q)) {
-  location.replace("http://localhost:8766/tiktok/callback" + q);
+  location.replace("http://127.0.0.1:8766/tiktok/callback" + q);
 } else {
   document.getElementById("m").textContent = "No authorization code received.";
 }
