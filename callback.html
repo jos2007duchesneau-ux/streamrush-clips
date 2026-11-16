@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>StreamRush Clips — TikTok authorization</title>
+<meta name="robots" content="noindex"><meta name="referrer" content="no-referrer"></head>
+<body style="font-family:system-ui;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.5">
+<h1>StreamRush Clips</h1><p id="m">Finishing TikTok authorization…</p>
+<script>
+// The authorization code is never stored or sent anywhere except to the owner's own computer (localhost),
+// where the StreamRush script exchanges it with TikTok and keeps the tokens in the macOS Keychain.
+var q = location.search;
+if (/[?&]code=/.test(q) || /[?&]error=/.test(q)) {
+  location.replace("http://localhost:8766/tiktok/callback" + q);
+} else {
+  document.getElementById("m").textContent = "No authorization code received.";
+}
+</script></body></html>
